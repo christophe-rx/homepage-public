@@ -1,0 +1,87 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Least privilege needed to publish to GitHub Pages via OIDC
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one deployment at a time; never cancel an in-flight publish
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # jekyll-imagemagick generates the responsive .webp variants that the
+      # profile photo and favicon are served from. Without it the build
+      # succeeds but those images 404.
+      - name: Install ImageMagick
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y imagemagick webp
+          convert -version | head -1
+          convert -list format | grep -qi webp || { echo "::error::ImageMagick has no WebP delegate"; exit 1; }
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.4'
+          bundler-cache: true # bundle install + cache gems, keyed on Gemfile.lock
+
+      # jekyll-terser minifies JS through execjs, which needs a JS runtime
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build site
+        env:
+          JEKYLL_ENV: production
+          # jekyll-scholar renders accented author names from papers.bib;
+          # a non-UTF-8 locale makes it fail on those entries.
+          LC_ALL: C.UTF-8
+          LANG: C.UTF-8
+        run: bundle exec jekyll build --destination _site
+
+      # Guard against a "successful" build that silently produced nothing,
+      # e.g. if jekyll-scholar stops emitting the bibliography.
+      - name: Verify build output
+        run: |
+          test -s _site/index.html || { echo "::error::_site/index.html missing or empty"; exit 1; }
+          test -s _site/publications/index.html || { echo "::error::publications page missing"; exit 1; }
+          # Count occurrences, not lines: the production build is minified onto
+          # a single line, so `grep -c` would report 1 no matter how many entries.
+          entries=$(grep -o 'class="row"' _site/publications/index.html | wc -l)
+          echo "Publication entries rendered: $entries"
+          [ "$entries" -ge 10 ] || { echo "::error::publications page has $entries entries — jekyll-scholar likely did not run"; exit 1; }
+          echo "Pages built: $(find _site -name '*.html' | wc -l)"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
