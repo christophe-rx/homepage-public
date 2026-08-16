@@ -8,8 +8,8 @@ body {
   font-family: "Roboto Mono", sans-serif;
   font-size: 14px;
   font-weight: 300;
-  color: #555555;
-  line-height: 1.35em;
+  color: var(--global-text-color);
+  line-height: 1.6; // unitless: every size scales its own leading
 }
 
 h1,
@@ -19,21 +19,13 @@ h4,
 h5,
 h6 {
   font-family: "Roboto Mono", sans-serif;
-  color: #000000;
+  color: var(--global-heading-color);
   font-weight: 500;
+  line-height: 1.2;
 }
 
 h1 {
-  font-weight: 200;
-}
-
-p,
-div,
-li,
-span,
-strong,
-em {
-  color: #555555;
+  font-weight: 300; // one weight for the whole name
 }
 
 strong {
@@ -45,20 +37,16 @@ hr {
 }
 
 table {
+  color: inherit;
+
   td,
   th {
-    font-size: 1rem;
-    padding: 1px 1rem 1px 0;
+    font-size: inherit;
+    padding: 0.5rem 1rem 0.5rem 0;
   }
 
   th {
-    font-weight: bold;
-  }
-}
-
-.news-table {
-  > :not(caption) > *:not(:last-child) > * {
-    border-bottom: 1px solid var(--global-divider-color) !important;
+    font-weight: 500;
   }
 }
 
@@ -237,34 +225,6 @@ ul.task-list input[type="checkbox"] {
   }
 }
 
-.post-title-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.post-title-icons {
-  display: flex;
-  margin-left: auto;
-  justify-content: flex-end;
-}
-
-.post-title-icons a {
-  color: #000;
-  text-decoration: none;
-}
-
-.post-title-icons a:hover {
-  color: #000;
-  text-decoration: none;
-}
-
-.post-title-icons i,
-.post-title-icons i::before {
-  color: currentColor;
-}
-
 .contact-icons.contact-icons--inline {
   display: inline-flex;
   flex-direction: row;
@@ -273,43 +233,8 @@ ul.task-list input[type="checkbox"] {
   line-height: 1;
 }
 
-.contact-icons.contact-icons--header {
-  font-size: 2rem;
-}
-
-.profile.float-right {
-  margin-left: 1rem;
-}
-
-.profile.float-left {
-  margin-right: 1rem;
-}
-
-@media (max-width: 575.98px) {
-  .profile {
-    max-width: min(70vw, 320px);
-    margin-left: auto;
-    margin-right: auto;
-    float: none !important;
-  }
-
-  .profile.float-right,
-  .profile.float-left {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@media (min-width: 576px) {
-  .profile {
-    width: 30%;
-
-    .address {
-      p {
-        display: block;
-      }
-    }
-  }
+.profile .address p {
+  display: block;
 }
 
 .post-description {

@@ -8,7 +8,7 @@ profile:
   image: christophe_roux.jpg
   image_circular: false # crops the image to make it circular
   contact_icons: |
-    <div class="contact-icons contact-icons--inline contact-icons--header" aria-label="Contact links">
+    <div class="contact-icons contact-icons--navbar" aria-label="Contact links">
       <a href="https://scholar.google.de/citations?user=2uCpq9IAAAAJ&amp;hl=en" title="Google Scholar" aria-label="Google Scholar">
         <i class="ai ai-google-scholar"></i>
       </a>
@@ -22,7 +22,7 @@ social: false # includes social icons at the bottom of the page
 
 announcements:
   enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  scrollable: false # capped by `limit` instead of a vw-sized scroll box
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
