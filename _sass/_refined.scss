@@ -1,0 +1,428 @@
+/*******************************************************************************
+ * Refined layout: one grid, one spacing scale, one ink.
+ * Imported after "base" in assets/css/main.scss.
+ ******************************************************************************/
+
+/* Spacing scale in use: 4 8 12 16 24 32 40 64 (px). Nothing else. */
+
+/* ---- About hero: grid, not float ----------------------------------------- */
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 268px;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-hero__figure {
+  margin: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.about-hero .post-title {
+  margin: 0;
+  font-size: 2.375rem; /* 38px */
+  line-height: 1.15;
+  font-weight: 300; /* one weight for the whole name */
+  letter-spacing: -0.01em;
+}
+
+.about-hero .desc {
+  margin: 8px 0 0;
+  color: var(--global-text-color-light);
+}
+
+.about-hero__intro {
+  margin-top: 24px;
+
+  p {
+    margin: 0;
+  }
+
+  p + p {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-hero__figure {
+    max-width: 320px;
+    order: -1;
+  }
+}
+
+/* ---- Contact icons live in the navbar on the about page ------------------- */
+
+.navbar-brand.navbar-contact {
+  padding: 0;
+  margin-right: 0;
+}
+
+.contact-icons--navbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: -6px;
+
+  a {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    color: var(--global-text-color);
+    border-radius: 3px;
+    text-decoration: none;
+
+    &:hover {
+      background: var(--global-icon-hover-bg);
+      color: var(--global-heading-color);
+      text-decoration: none;
+    }
+  }
+
+  i {
+    line-height: 1;
+  }
+
+  /* Academicons and Font Awesome draw at different heights in the same em box,
+     so they are sized per family inside equal 28px boxes. */
+  .ai {
+    font-size: 17px;
+  }
+
+  .fa-solid,
+  .fa-brands,
+  .fas,
+  .fab {
+    font-size: 14px;
+  }
+}
+
+/* ---- Current page: blue underline, dark label ---------------------------- */
+
+.navbar.navbar-light .navbar-nav .nav-item.active > .nav-link {
+  color: var(--global-heading-color);
+  font-weight: 400;
+  box-shadow: inset 0 -2px 0 var(--global-theme-color);
+
+  &:hover {
+    color: var(--global-heading-color);
+    box-shadow: inset 0 -2px 0 var(--global-theme-color);
+  }
+}
+
+/* ---- Search reads as a key hint, not a fourth destination ---------------- */
+
+/* The <li> is the flex item in .navbar-nav, so the chip is centred there —
+   otherwise the button sits at the top of a stretched item. */
+.navbar-nav .nav-item--search {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+}
+
+#search-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  line-height: 1;
+}
+
+.navbar .navbar-nav .nav-item #search-toggle .nav-link,
+#search-toggle .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: auto;
+  padding: 4px 7px;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--global-text-color-light);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 3px;
+}
+
+/* Bootstrap paints kbd as a black chip; here it is just the label. */
+#search-toggle kbd {
+  display: inline-block;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: 1;
+  color: inherit;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#search-toggle .nav-link i {
+  font-size: 0.8125rem;
+  line-height: 1;
+}
+
+#search-toggle:hover .nav-link {
+  color: var(--global-heading-color);
+  border-color: var(--global-divider-strong);
+}
+
+/* ---- News: a list with a fixed date column, not a table ------------------ */
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-top: 64px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--global-heading-color);
+
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.2;
+
+    a {
+      color: inherit;
+
+      &:hover {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.section-head__link {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--global-text-color-light);
+}
+
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  > li {
+    display: grid;
+    grid-template-columns: 116px minmax(0, 1fr);
+    gap: 24px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--global-divider-color);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.news-list__date {
+  color: var(--global-text-color-light);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.news-list__body {
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  ul li {
+    display: flex;
+    gap: 10px;
+
+    &::before {
+      content: "\2014";
+      color: var(--global-divider-strong);
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .news-list > li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+/* ---- Footer: in the flow, same dark bar --------------------------------- */
+
+footer.sticky-bottom {
+  border-top: 0;
+  padding: 0;
+  background-color: var(--global-footer-bg-color);
+  font-size: 0.75rem;
+
+  .container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-align: left;
+    color: var(--global-footer-text-color);
+  }
+
+  a {
+    color: var(--global-footer-link-color);
+
+    &:hover {
+      color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+}
+
+/* ---- Publications: the buttons and badges come from MDB, which does not ---
+   inherit our type. Same chains as _base.scss so these win on cascade order. */
+
+.publications ol.bibliography li {
+  margin-bottom: 24px;
+}
+
+.publications ol.bibliography li .title {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.35;
+
+  a,
+  a:visited,
+  a:hover,
+  a:focus {
+    color: var(--global-heading-color);
+  }
+}
+
+.publications ol.bibliography li .author {
+  line-height: 1.5;
+}
+
+.publications ol.bibliography li .pub-meta {
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.publications ol.bibliography li .pub-tag.badge {
+  font-family: inherit;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  padding: 4px 7px;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.publications ol.bibliography li .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.publications ol.bibliography li .links a.btn {
+  font-family: inherit;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
+  margin: 0;
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+/* Year headings were painted with --global-divider-color (10% black) */
+.publications h2.bibliography {
+  color: var(--global-text-color-light);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding-top: 16px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+
+  span {
+    font-size: inherit;
+  }
+}
+
+.publications h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--global-heading-color);
+}
+
+.bibsearch-form-input {
+  font-family: inherit;
+  font-size: 0.8125rem;
+  border-radius: 3px;
+}
+
+/* ---- Activities: one heading size, one meta size ------------------------- */
+
+.ssot-activities h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.ssot-activities .ssot-activities__list > li {
+  margin-bottom: 16px;
+}
+
+.ssot-activities .ssot-activity__headline {
+  line-height: 1.5;
+}
+
+.ssot-activities .ssot-activity__meta {
+  font-size: 0.8125rem;
+  margin-top: 2px;
+}
+
+.ssot-activities .ssot-activity__location {
+  font-size: 1em;
+}
+
+/* ---- Page headers on the inner pages ------------------------------------ */
+
+.post-header .post-title {
+  line-height: 1.2;
+}
+
+.post-description {
+  margin-top: 8px;
+  margin-bottom: 32px;
+  font-size: 0.8125rem;
+  color: var(--global-text-color-light);
+}
