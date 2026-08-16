@@ -1,0 +1,31 @@
+# Jekyll build output & caches
+_site
+.bundle
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+.tweet-cache
+.ruby-version
+vendor
+node_modules/
+assets/libs/
+
+# Python
+.venv
+__pycache__/
+*.pyc
+
+# Editors & tooling
+.idea
+.claude/settings.local.json
+
+# macOS
+.DS_Store
+.DS_store
+
+# Local data sync cache
+.ssot-cache/
+
+# Local-only docs (not published)
+README.md
+CLAUDE.md

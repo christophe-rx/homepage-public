@@ -1,0 +1,133 @@
+metadata:
+  synced_at: '2026-08-16T15:33:45Z'
+talks:
+- title: Curvature and Complexity of Frank-Wolfe Methods
+  event: 8th DOxML Conference
+  location: Tokyo, Japan
+  date: 2026-07
+  event_url: https://doml.zib.de
+- title: Lower Bounds for Frank-Wolfe on Strongly Convex Sets
+  event: SIERRA Seminar at INRIA Paris
+  location: Paris, France
+  date: '2026-03-26'
+- title: Was Mathematik mit künstlicher Intelligenz zu tun hat
+  event: MATHINSIDE
+  location: Berlin, Germany
+  date: '2025-11-10'
+  url: https://mathplus.de/events/mathinside-am-10-november-2025/
+- title: Bounding geometric penalties in Riemannian optimization
+  event: IOL Seminar, Zuse Institute Berlin
+  location: Berlin, Germany
+  date: '2025-06-18'
+  url: https://iol.zib.de/seminar/
+  event_url: https://iol.zib.de/seminar/
+- title: Implicit Riemannian Optimism with Applications to Min-Max Problems
+  event: ICCOPT 2025
+  location: Los Angeles, USA
+  date: '2025-06-17'
+  event_url: https://sites.google.com/view/iccopt2025/home
+- title: Implicit Riemannian Optimism with Applications to Min-Max Problems
+  event: 'Foundations and Frontiers: Interdisciplinary Perspectives on Mathematical Optimization'
+  location: Tokyo, Japan
+  date: '2025-05-21'
+  url: https://aip.riken.jp/events/event_184175/
+- title: Bounding geometric penalties in Riemannian optimization
+  event: CISPA Research Seminar, Helmholtz Center for Information Security
+  location: Saarbrücken, Germany
+  date: '2024-04-24'
+  event_url: https://cispa.de/en/events
+- title: Bounding geometric penalties in first-order Riemannian optimization
+  event: Modern Methods in Applied Stochastics and Nonparametric Statistics, WIAS Berlin
+  location: Berlin, Germany
+  date: '2023-11-28'
+  url: https://www.wias-berlin.de/research/rgs/fg6/fgsem.jsp?lang=0
+  event_url: https://www.wias-berlin.de/research/rgs/fg6/fgsem.jsp
+  type: Seminar
+- title: 'Riemannian optimization: how and why?'
+  event: Workshop on Optimization and Machine Learning
+  location: Waischenfeld, Germany
+  date: '2023-03-12'
+  event_url: https://scs.fraunhofer.de/en/events/2023/workshop-optimization-ml.html
+posters:
+- title: Implicit Riemannian Optimism with Applications to Min-Max Problems
+  event: ICML 2025
+  location: Vancouver, Canada
+  date: '2025-07-16'
+  event_url: https://icml.cc/Conferences/2025
+- title: Accelerated Riemannian Min-Max Optimization Ensuring Bounded Geometric Penalties
+  event: AISTATS 2025
+  location: Phuket, Thailand
+  date: '2025-05-04'
+  event_url: https://virtual.aistats.org/Conferences/2025
+- title: On the Byzantine-Resilience of Distillation-Based Federated Learning
+  event: ICLR 2025
+  location: Singapore
+  date: '2025-04-26'
+  event_url: https://iclr.cc/Conferences/2025
+- title: Convergence and Trade-Offs in Riemannian Gradient Descent and Riemannian Proximal Point
+  event: ICML 2024
+  location: Vienna, Austria
+  date: '2024-07-23'
+  event_url: https://icml.cc/Conferences/2024
+- title: Accelerated Riemannian Min-Max Optimization Ensuring Bounded Geometric Penalties
+  event: Workshop on Optimization and Machine Learning
+  location: Waischenfeld, Germany
+  date: '2023-03-12'
+  event_url: https://scs.fraunhofer.de/en/events/2023/workshop-optimization-ml.html
+events:
+- title: NeurIPS 2025 — EurIPS
+  event: NeurIPS 2025 — EurIPS
+  date: '2025'
+  location: Copenhagen, Denmark
+  url: https://eurips.cc/
+  event_url: https://eurips.cc/
+- title: International Conference on Continuous Optimization (ICCOPT 2025)
+  event: International Conference on Continuous Optimization (ICCOPT 2025)
+  date: '2025'
+  location: Los Angeles, USA
+  url: https://sites.google.com/view/iccopt2025/home
+  event_url: https://sites.google.com/view/iccopt2025/home
+- title: International Conference on Machine Learning (ICML 2025)
+  event: International Conference on Machine Learning (ICML 2025)
+  date: '2025'
+  location: Vancouver, Canada
+  url: https://icml.cc/Conferences/2025
+  event_url: https://icml.cc/Conferences/2025
+- title: International Conference on Learning Representations (ICLR 2025)
+  event: International Conference on Learning Representations (ICLR 2025)
+  date: '2025'
+  location: Singapore, Singapore
+  url: https://iclr.cc/Conferences/2025
+  event_url: https://iclr.cc/Conferences/2025
+- title: International Conference on Artificial Intelligence and Statistics (AISTATS 2025)
+  event: International Conference on Artificial Intelligence and Statistics (AISTATS 2025)
+  date: '2025'
+  location: Phuket, Thailand
+  url: https://virtual.aistats.org/Conferences/2025
+  event_url: https://virtual.aistats.org/Conferences/2025
+- title: Conference on Discrete Optimization and Machine Learning (DOxML 2025)
+  event: Conference on Discrete Optimization and Machine Learning (DOxML 2025)
+  date: '2025'
+  location: Kyoto, Japan
+  url: https://doml.zib.de/previous/doml2025.html
+  event_url: https://doml.zib.de/previous/doml2025.html
+- title: International Conference on Machine Learning (ICML 2024)
+  event: International Conference on Machine Learning (ICML 2024)
+  date: '2024'
+  location: Vienna, Austria
+  url: https://icml.cc/Conferences/2024
+  event_url: https://icml.cc/Conferences/2024
+- title: NeurIPS 2023 — NeurIPS@Paris
+  event: NeurIPS 2023 — NeurIPS@Paris
+  date: '2023'
+  location: Paris, France
+  url: https://neuripsinparis.github.io/neurips2023paris/
+  event_url: https://neuripsinparis.github.io/neurips2023paris/
+teaching:
+- title: High-Dimensional Optimization and Learning
+  event: TU Berlin, Institute of Mathematics
+  date: '2026'
+  location: Thursdays, 14:00–16:00, MAR 4.064
+  event_url: https://moseskonto.tu-berlin.de/moses/verzeichnis/veranstaltungen/veranstaltung.html?veranstaltung=325548
+  url: https://isis.tu-berlin.de/course/view.php?id=48350
+other: []

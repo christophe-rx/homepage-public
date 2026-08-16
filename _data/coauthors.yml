@@ -1,0 +1,84 @@
+breiten:
+- firstname:
+  - Tobias
+criscitiello:
+- firstname:
+  - Christopher
+  url: https://ccriscitiello.github.io/personalwebsite/
+d'aspremont:
+- firstname:
+  - Alexandre
+  url: https://www.di.ens.fr/~aspremon/
+deza:
+- firstname:
+  - Daniel
+  url: https://dezadaniel.github.io/
+elhishi:
+- firstname:
+  - Ali
+garber:
+- firstname:
+  - Dan
+günther:
+- firstname:
+  - Fritz
+  url: https://sites.google.com/site/fritzgntr/
+halbey:
+- firstname:
+  - Jannis
+  url: https://iol.zib.de/team/jannis-halbey.html
+hendrych:
+- firstname:
+  - Deborah
+  url: https://iol.zib.de/team/deborah-hendrych.html
+kerdreux:
+- firstname:
+  - Thomas
+krüger:
+- firstname:
+  - Jörg
+kutyniok:
+- firstname:
+  - Gitta
+martínez-rubio:
+- firstname:
+  - David
+  url: https://damaru2.github.io/
+pelleriti:
+- firstname:
+  - Nico
+  url: https://www.pelleriti.org/
+pokutta:
+- firstname:
+  - Sebastian
+  url: https://www.pokutta.com/
+roux:
+- firstname:
+  - Christophe
+  url: https://christopheroux.de
+schiekiera:
+- firstname:
+  - Louis
+  url: https://schiekiera.github.io/
+skutella:
+- firstname:
+  - Martin
+sra:
+- firstname:
+  - Suvrit
+stellato:
+- firstname:
+  - Bartolomeo
+  url: https://stella.to/
+wagner:
+- firstname:
+  - Moritz
+  url: https://iol.zib.de/team/moritz-wagner.html
+wirth:
+- firstname:
+  - Elias Samuel
+  url: https://elwirth.github.io/
+zimmer:
+- firstname:
+  - Max
+  url: https://maxzimmer.org/

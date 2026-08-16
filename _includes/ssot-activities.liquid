@@ -1,0 +1,202 @@
+{% assign acts = site.data.ssot_activities %}
+{% if acts %}
+<div class="ssot-activities">
+{% if acts.teaching and acts.teaching.size > 0 %}
+<hr class="ssot-section-divider">
+<h3>Teaching</h3>
+<ul class="ssot-activities__list">
+{% for item in acts.teaching %}
+  <li>
+    <div class="ssot-activity">
+      <div class="ssot-activity__headline">
+        {% if item.date %}
+          {% assign date_str = item.date | append: "" %}
+          {% if date_str contains "-" %}
+            {% assign date_fmt = item.date | date: "%m/%Y" %}
+          {% elsif date_str.size == 4 %}
+            {% assign date_fmt = date_str | append: "-01-01" | date: "%m/%Y" %}
+          {% else %}
+            {% assign date_fmt = date_str %}
+          {% endif %}
+          <span class="ssot-activity__date">{{ date_fmt }}</span>
+          <span class="ssot-activity__sep">—</span>
+        {% endif %}
+        <span class="ssot-activity__title">{{ item.title }}</span>
+      </div>
+
+      {% assign second_link = item.event_url | default: item.url %}
+      {% if item.event or item.location or second_link %}
+        <div class="ssot-activity__meta">
+          {% if item.event %}
+            <span class="ssot-activity__event">
+              {% if second_link %}<a href="{{ second_link }}">{{ item.event }}</a>{% else %}{{ item.event }}{% endif %}
+            </span>
+            {% if item.location %}
+              <span class="ssot-activity__meta-sep">—</span>
+              <span class="ssot-activity__location">{{ item.location }}</span>
+            {% endif %}
+          {% elsif item.location %}
+            <span class="ssot-activity__event">
+              {% if second_link %}<a href="{{ second_link }}">{{ item.location }}</a>{% else %}{{ item.location }}{% endif %}
+            </span>
+          {% elsif second_link %}
+            <span class="ssot-activity__event"><a href="{{ second_link }}">{{ second_link }}</a></span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if acts.talks and acts.talks.size > 0 %}
+<hr class="ssot-section-divider">
+<h3>Talks</h3>
+<ul class="ssot-activities__list">
+{% for item in acts.talks %}
+  <li>
+    <div class="ssot-activity">
+      <div class="ssot-activity__headline">
+        {% if item.date %}
+          {% assign date_str = item.date | append: "" %}
+          {% if date_str contains "-" %}
+            {% assign date_fmt = item.date | date: "%m/%Y" %}
+          {% elsif date_str.size == 4 %}
+            {% assign date_fmt = date_str | append: "-01-01" | date: "%m/%Y" %}
+          {% else %}
+            {% assign date_fmt = date_str %}
+          {% endif %}
+          <span class="ssot-activity__date">{{ date_fmt }}</span>
+          <span class="ssot-activity__sep">—</span>
+        {% endif %}
+        <span class="ssot-activity__title">{{ item.title }}</span>
+      </div>
+
+      {% assign second_link = item.event_url | default: item.url %}
+      {% if item.event or item.location or second_link %}
+        <div class="ssot-activity__meta">
+          {% if item.event %}
+            <span class="ssot-activity__event">
+              {% if second_link %}<a href="{{ second_link }}">{{ item.event }}</a>{% else %}{{ item.event }}{% endif %}
+            </span>
+            {% if item.location %}
+              <span class="ssot-activity__meta-sep">—</span>
+              <span class="ssot-activity__location">{{ item.location }}</span>
+            {% endif %}
+          {% elsif item.location %}
+            <span class="ssot-activity__event">
+              {% if second_link %}<a href="{{ second_link }}">{{ item.location }}</a>{% else %}{{ item.location }}{% endif %}
+            </span>
+          {% elsif second_link %}
+            <span class="ssot-activity__event"><a href="{{ second_link }}">{{ second_link }}</a></span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if acts.posters and acts.posters.size > 0 %}
+<hr class="ssot-section-divider">
+<h3>Posters</h3>
+<ul class="ssot-activities__list">
+{% for item in acts.posters %}
+  <li>
+    <div class="ssot-activity">
+      <div class="ssot-activity__headline">
+        {% if item.date %}
+          {% assign date_str = item.date | append: "" %}
+          {% if date_str contains "-" %}
+            {% assign date_fmt = item.date | date: "%m/%Y" %}
+          {% elsif date_str.size == 4 %}
+            {% assign date_fmt = date_str | append: "-01-01" | date: "%m/%Y" %}
+          {% else %}
+            {% assign date_fmt = date_str %}
+          {% endif %}
+          <span class="ssot-activity__date">{{ date_fmt }}</span>
+          <span class="ssot-activity__sep">—</span>
+        {% endif %}
+        <span class="ssot-activity__title">{{ item.title }}</span>
+      </div>
+
+      {% assign second_link = item.event_url | default: item.url %}
+      {% if item.event or item.location or second_link %}
+        <div class="ssot-activity__meta">
+          {% if item.event %}
+            <span class="ssot-activity__event">
+              {% if second_link %}<a href="{{ second_link }}">{{ item.event }}</a>{% else %}{{ item.event }}{% endif %}
+            </span>
+            {% if item.location %}
+              <span class="ssot-activity__meta-sep">—</span>
+              <span class="ssot-activity__location">{{ item.location }}</span>
+            {% endif %}
+          {% elsif item.location %}
+            <span class="ssot-activity__event">
+              {% if second_link %}<a href="{{ second_link }}">{{ item.location }}</a>{% else %}{{ item.location }}{% endif %}
+            </span>
+          {% elsif second_link %}
+            <span class="ssot-activity__event"><a href="{{ second_link }}">{{ second_link }}</a></span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% if acts.other and acts.other.size > 0 %}
+<h2>Other</h2>
+<ul class="ssot-activities__list">
+{% for item in acts.other %}
+  <li>
+    <div class="ssot-activity">
+      <div class="ssot-activity__headline">
+        {% if item.date %}
+          {% assign date_str = item.date | append: "" %}
+          {% if date_str contains "-" %}
+            {% assign date_fmt = item.date | date: "%m/%Y" %}
+          {% elsif date_str.size == 4 %}
+            {% assign date_fmt = date_str | append: "-01-01" | date: "%m/%Y" %}
+          {% else %}
+            {% assign date_fmt = date_str %}
+          {% endif %}
+          <span class="ssot-activity__date">{{ date_fmt }}</span>
+          <span class="ssot-activity__sep">—</span>
+        {% endif %}
+        <span class="ssot-activity__title">{{ item.title }}</span>
+      </div>
+
+      {% assign second_link = item.event_url | default: item.url %}
+      {% if item.event or item.location or second_link %}
+        <div class="ssot-activity__meta">
+          {% if item.event %}
+            <span class="ssot-activity__event">
+              {% if second_link %}<a href="{{ second_link }}">{{ item.event }}</a>{% else %}{{ item.event }}{% endif %}
+            </span>
+            {% if item.location %}
+              <span class="ssot-activity__meta-sep">—</span>
+              <span class="ssot-activity__location">{{ item.location }}</span>
+            {% endif %}
+          {% elsif item.location %}
+            <span class="ssot-activity__event">
+              {% if second_link %}<a href="{{ second_link }}">{{ item.location }}</a>{% else %}{{ item.location }}{% endif %}
+            </span>
+          {% elsif second_link %}
+            <span class="ssot-activity__event"><a href="{{ second_link }}">{{ second_link }}</a></span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </li>
+{% endfor %}
+</ul>
+{% endif %}
+{% comment %} .ssot-activities {% endcomment %}
+</div>
+{% else %}
+Run `python3 bin/sync_ssot.py` to generate `_data/ssot_activities.yml`, then rebuild the site.
+{% endif %}
