@@ -1,3 +1,17 @@
+@inproceedings{wagner2025free,
+  author       = {Moritz Wagner and
+                  Christophe Roux and
+                  Max Zimmer and
+                  Sebastian Pokutta},
+  title        = {A Free Lunch in {LLM} Compression: Revisiting Retraining after Pruning},
+  booktitle    = {Conference on Neural Information Processing Systems},
+  year         = {2026},
+  eprinttype    = {arXiv},
+  eprint       = {2510.14444},
+  arxiv        = {2510.14444},
+  abstract     = {While Neural Network pruning typically requires retraining the model to recover pruning-induced performance degradation, state-of-the-art Large Language Models (LLMs) pruning methods instead solve a layer-wise mask selection and reconstruction problem on a small set of calibration data to avoid full retraining, as it is considered computationally infeasible for LLMs. Reconstructing single matrices in isolation has favorable properties, such as convexity of the objective and significantly reduced memory requirements compared to full retraining. In practice, however, reconstruction is often implemented at coarser granularities, e.g., reconstructing a whole transformer block against its dense activations instead of a single matrix. In this work, we study the key design choices when reconstructing or retraining the remaining weights after pruning. We conduct an extensive computational study on state-of-the-art GPT architectures, and report several surprising findings that challenge common intuitions about retraining after pruning. In particular, we observe a free lunch scenario: reconstructing attention and MLP components separately within each transformer block is nearly the most resource-efficient yet achieves the best perplexity. Most importantly, this Pareto-optimal setup achieves better performance than full retraining, despite requiring only a fraction of the memory. Furthermore, we demonstrate that simple and efficient pruning criteria such as Wanda can outperform much more complex approaches when the reconstruction step is properly executed, highlighting its importance. Our findings challenge the narrative that retraining should be avoided at all costs and provide important insights into post-pruning performance recovery for LLMs.},
+}
+
 @article{elhishi2026restart,
   author       = {Ali Elhishi and
                   Christophe Roux and
@@ -13,15 +27,13 @@
   abstract     = {We study restart schemes in stochastic optimization problems for non-smooth and weakly convex that satisfy a Kurdyka-Łojasiewicz inequality. We show that using restarts allows us to leverage the KŁ inequalities to achieve improved rates of convergence, with acceleration depending explicitly on the KŁ exponent. Furthermore, optimal restart schedules lead to learning-rates akin to Polyak steps for SGD. While regularity constants such as the KŁ exponent are typically unknown in practice, we prove that restart schemes are robust to a significant misspecification of these constants, hence nearly adaptive. We detail numerical experiments on both toy problems, where the KŁ exponent is controlled, and training of Large Language Models (LLMs).},
 }
 
-@article{halbey2026curvature,
+@inproceedings{halbey2026curvature,
   author       = {Jannis Halbey and
                   Christophe Roux and
                   Sebastian Pokutta},
   title        = {Curvature-Dependent Lower Bounds for Frank-Wolfe},
-  journal      = {CoRR},
-  volume       = {abs/2605.10595},
+  booktitle    = {Conference on Neural Information Processing Systems},
   year         = {2026},
-  url          = {https://arxiv.org/abs/2605.10595},
   eprinttype    = {arXiv},
   eprint       = {2605.10595},
   arxiv        = {2605.10595},
@@ -83,6 +95,25 @@
   arxiv        = {2603.15914},
   code         = {https://github.com/ZIB-IOL/The-Agentic-Researcher},
   abstract     = {AI tools and agents are reshaping how researchers work, from proving theorems to training neural networks. Yet for many, it remains unclear how these tools fit into everyday research practice. This paper is a practical guide to AI-assisted research in mathematics and machine learning: We discuss how researchers can use modern AI systems productively, where these systems help most, and what kinds of guardrails are needed to use them responsibly. It is organized into three parts: (I) a five-level taxonomy of AI integration, (II) an open-source framework that, through a set of methodological rules formulated as agent prompts, turns CLI coding agents (e.g., Claude Code, Codex CLI, OpenCode) into autonomous research assistants, and (III) case studies from deep learning and mathematics. The framework runs inside a sandboxed container, works with any frontier LLM through existing CLI agents, is simple enough to install and use within minutes, and scales from personal-laptop prototyping to multi-node, multi-GPU experimentation across compute clusters. In practice, our longest autonomous session ran for over 20 hours, dispatching independent experiments across multiple nodes without human intervention. We stress that our framework is not intended to replace the researcher in the loop, but to augment them. Our code is publicly available at https://github.com/ZIB-IOL/The-Agentic-Researcher.},
+}
+
+@article{schiekiera2026linearpfn,
+  author       = {Louis Schiekiera and
+                  Max Zimmer and
+                  Christophe Roux and
+                  Manuel Arnold and
+                  Sebastian Pokutta and
+                  Fritz Günther},
+  title        = {LinearPFN: Amortized Variable Selection for Linear Models with Interactions},
+  journal      = {CoRR},
+  volume       = {abs/2610.06580},
+  year         = {2026},
+  url          = {https://arxiv.org/abs/2610.06580},
+  eprinttype    = {arXiv},
+  eprint       = {2610.06580},
+  arxiv        = {2610.06580},
+  code         = {https://github.com/schiekiera/LinearPFN},
+  abstract     = {Spike-and-slab regression is a standard Bayesian formulation of variable selection: it returns a posterior distribution over which candidate effects are active rather than a single selected subset, so that every candidate effect carries an inclusion probability. Its cost grows exponentially with the number of candidate effects, so the posterior can be enumerated exactly only when the number of predictors is small. Beyond that reach, the posterior has to be approximated, typically by Markov chain Monte Carlo over the model space, which requires a fresh run for every dataset and, within a fixed budget of steps, may fail to converge. We present LinearPFN, a prior-data fitted transformer network that amortizes spike-and-slab inference for linear models with main effects and pairwise interactions. The network is pretrained once on synthetic datasets, drawn from an explicitly specified prior, and a single forward pass over a new dataset returns posterior inclusion probabilities, posterior-mean coefficients and posterior predictive distributions with no per-dataset fitting. The prior is conjugate by design, so that the posterior for each fixed set of active effects has a closed form, and wherever the exact posterior is still computable by enumeration we verify the network's outputs against it. On real predictor matrices from published social-science datasets, with outcomes drawn from the prior so that the true active set is known, LinearPFN attains a higher per-dataset selection AUC and a higher F1 under the median probability model rule than five classical baselines. The lead holds when the coefficients, the interactions or the noise depart from the prior.},
 }
 
 @inproceedings{martinez2025accelerated,
@@ -153,22 +184,6 @@
   arxiv        = {2510.13713},
   equal_contrib_author_indices = {1,2},
   abstract     = {Pruning is a common technique to reduce the compute and storage requirements of Neural Networks. While conventional approaches typically retrain the model to recover pruning-induced performance degradation, state-of-the-art Large Language Model (LLM) pruning methods operate layer-wise, minimizing the per-layer pruning error on a small calibration dataset to avoid full retraining, which is considered computationally prohibitive for LLMs. However, finding the optimal pruning mask is a hard combinatorial problem and solving it to optimality is intractable. Existing methods hence rely on greedy heuristics that ignore the weight interactions in the pruning objective. In this work, we instead consider the convex relaxation of these combinatorial constraints and solve the resulting problem using the Frank-Wolfe (FW) algorithm. Our method drastically reduces the per-layer pruning error, outperforms strong baselines on state-of-the-art GPT architectures, and remains memory-efficient. We provide theoretical justification by showing that, combined with the convergence guarantees of the FW algorithm, we obtain an approximate solution to the original combinatorial problem upon rounding the relaxed solution to integrality.},
-}
-
-@article{wagner2025free,
-  author       = {Moritz Wagner and
-                  Christophe Roux and
-                  Max Zimmer and
-                  Sebastian Pokutta},
-  title        = {A Free Lunch in {LLM} Compression: Revisiting Retraining after Pruning},
-  journal      = {CoRR},
-  volume       = {abs/2510.14444},
-  year         = {2025},
-  url          = {https://arxiv.org/abs/2510.14444},
-  eprinttype    = {arXiv},
-  eprint       = {2510.14444},
-  arxiv        = {2510.14444},
-  abstract     = {While Neural Network pruning typically requires retraining the model to recover pruning-induced performance degradation, state-of-the-art Large Language Models (LLMs) pruning methods instead solve a layer-wise mask selection and reconstruction problem on a small set of calibration data to avoid full retraining, as it is considered computationally infeasible for LLMs. Reconstructing single matrices in isolation has favorable properties, such as convexity of the objective and significantly reduced memory requirements compared to full retraining. In practice, however, reconstruction is often implemented at coarser granularities, e.g., reconstructing a whole transformer block against its dense activations instead of a single matrix. In this work, we study the key design choices when reconstructing or retraining the remaining weights after pruning. We conduct an extensive computational study on state-of-the-art GPT architectures, and report several surprising findings that challenge common intuitions about retraining after pruning. In particular, we observe a free lunch scenario: reconstructing attention and MLP components separately within each transformer block is nearly the most resource-efficient yet achieves the best perplexity. Most importantly, this Pareto-optimal setup achieves better performance than full retraining, despite requiring only a fraction of the memory. Furthermore, we demonstrate that simple and efficient pruning criteria such as Wanda can outperform much more complex approaches when the reconstruction step is properly executed, highlighting its importance. Our findings challenge the narrative that retraining should be avoided at all costs and provide important insights into post-pruning performance recovery for LLMs.},
 }
 
 @article{zimmer2025sparseswaps,
