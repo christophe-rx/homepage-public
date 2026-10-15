@@ -280,6 +280,9 @@ scholar:
   details_link: Details
 
   query: "@*"
+  # first_online encodes the first arXiv posting (YYYYMM + arXiv sequence number).
+  sort_by: year, first_online
+  order: descending, descending
   group_by: year
   group_order: descending
 
