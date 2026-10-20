@@ -31,8 +31,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-
-I am the research area lead for [iol.OML](https://iol.zib.de/research/iol-oml.html) (Optimization and Learning) at the [Zuse Institute Berlin (ZIB)](https://www.zib.de/) and a 5th-year PhD student at the [Institute of Mathematics, TU Berlin](https://www.math.tu-berlin.de/) under the supervision of [Sebastian Pokutta](https://www.pokutta.com/) and [David Martínez-Rubio](https://damaru2.github.io/). I am also a member of the [Berlin Mathematical School (BMS)](https://www.math-berlin.de/).
+I am the research area lead for [iol.OML](https://iol.zib.de/research/iol-oml.html) (Optimization and Learning) at the [Zuse Institute Berlin (ZIB)](https://www.zib.de/). I defended my PhD at the [Institute of Mathematics, TU Berlin](https://www.math.tu-berlin.de/) in June 2026, under the supervision of [Sebastian Pokutta](https://www.pokutta.com/) and [David Martínez-Rubio](https://damaru2.github.io/). I am also a member of the [Berlin Mathematical School (BMS)](https://www.math-berlin.de/).
 
 My research focuses on algorithms and theory for large-scale continuous optimization, with an emphasis on first-order methods for problems in modern machine learning. Specifically, I have worked on first order methods on Riemannian manifolds, online optimization, min-max formulations, Frank-Wolfe and federated learning.
 I have also recently started working on efficiency in deep learning, applying optimization techniques in compression/pruning methods for LLMs.
