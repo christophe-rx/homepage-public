@@ -123,6 +123,22 @@
   abstract     = {Spike-and-slab regression is a standard Bayesian formulation of variable selection: it returns a posterior distribution over which candidate effects are active rather than a single selected subset, so that every candidate effect carries an inclusion probability. Its cost grows exponentially with the number of candidate effects, so the posterior can be enumerated exactly only when the number of predictors is small. Beyond that reach, the posterior has to be approximated, typically by Markov chain Monte Carlo over the model space, which requires a fresh run for every dataset and, within a fixed budget of steps, may fail to converge. We present LinearPFN, a prior-data fitted transformer network that amortizes spike-and-slab inference for linear models with main effects and pairwise interactions. The network is pretrained once on synthetic datasets, drawn from an explicitly specified prior, and a single forward pass over a new dataset returns posterior inclusion probabilities, posterior-mean coefficients and posterior predictive distributions with no per-dataset fitting. The prior is conjugate by design, so that the posterior for each fixed set of active effects has a closed form, and wherever the exact posterior is still computable by enumeration we verify the network's outputs against it. On real predictor matrices from published social-science datasets, with outcomes drawn from the prior so that the true active set is known, LinearPFN attains a higher per-dataset selection AUC and a higher F1 under the median probability model rule than five classical baselines. The lead holds when the coefficients, the interactions or the noise depart from the prior.},
 }
 
+@article{wagner2026kv,
+  author       = {Moritz Wagner and
+                  Christophe Roux and
+                  Max Zimmer and
+                  Sebastian Pokutta},
+  title        = {The KV-Surgeon: Compensation-Aware Offline KV-Cache Compaction},
+  journal      = {CoRR},
+  volume       = {abs/2610.25933},
+  first_online = {20261025933},
+  year         = {2026},
+  url          = {https://arxiv.org/abs/2610.25933},
+  eprinttype    = {arXiv},
+  eprint       = {2610.25933},
+  arxiv        = {2610.25933},
+  abstract     = {Offline compaction of the key--value cache (KV-cache) reduces the cost of repeatedly querying a fixed context by constructing a smaller cache once and reusing it subsequently. The central challenge of compaction is deciding which cache entries to delete and which to retain. Existing methods score each candidate for deletion on its own, with the rest of the cache being held fixed. However, softmax renormalization of the attention operation couples these decisions in a nonlinear manner: removing one entry changes the attention weights of every remaining one. In this work, we introduce KV-Surgeon, which uses calibration data to take interactions into account in a tractable way. We derive a quadratic surrogate that admits closed-form expressions for jointly making the optimal greedy removal decision as well as compensation within the remaining entries. On QuALITY, LongHealth, and Long Code Arena, and at every evaluated compaction ratio, KV-Surgeon substantially advances the cost--accuracy Pareto frontier of dense and mixture-of-experts models from 4B to 30B parameters. At $50\times$ compaction, KV-Surgeon improves question-answering accuracy by up to four points over attention matching (Zweiger et al., 2026), the state of the art, at comparable cost. Lastly, we introduce an even faster variant, which also exceeds the state of the art while requiring only two fifths of its cost.},
+}
 @inproceedings{martinez2025accelerated,
   author       = {David Martínez-Rubio and
                   Christophe Roux and
