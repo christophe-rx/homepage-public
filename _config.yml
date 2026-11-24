@@ -7,7 +7,7 @@ first_name: Christophe
 middle_name:
 last_name: Roux
 contact_note:
-description: "Christophe Roux - postdoctoral researcher in the SIERRA team at Inria Paris. Optimization, machine learning, and efficient deep learning."
+description: "Christophe Roux — postdoctoral researcher in the SIERRA team at Inria Paris. Optimization, machine learning, and efficient deep learning."
 footer_text:
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
@@ -271,7 +271,7 @@ scholar:
   # Note: if you have latex math in your bibtex, the latex filter
   # preprocessing may conflict with MathJAX if the latter is enabled.
   # See https://github.com/alshedivat/al-folio/issues/357.
-  bibtex_filters: [latex, smallcaps, superscript]
+  bibtex_filters: [InlineTypewriterText, latex, smallcaps, superscript]
 
   replace_strings: true
   join_strings: true
@@ -280,8 +280,8 @@ scholar:
   details_link: Details
 
   query: "@*"
-  # first_online encodes the first arXiv posting (YYYYMM + arXiv sequence number).
-  sort_by: year, first_online
+  # Modern arXiv IDs (YYMM.sequence) sort by first posting within each year.
+  sort_by: year, arxiv
   order: descending, descending
   group_by: year
   group_order: descending

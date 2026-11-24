@@ -5,7 +5,6 @@
                   Sebastian Pokutta},
   title        = {A Free Lunch in {LLM} Compression: Revisiting Retraining after Pruning},
   booktitle    = {Conference on Neural Information Processing Systems},
-  first_online = {20251014444},
   year         = {2026},
   eprinttype    = {arXiv},
   eprint       = {2510.14444},
@@ -20,7 +19,6 @@
   title        = {Restart and Adaptive Acceleration in Stochastic Gradient Methods},
   journal      = {CoRR},
   volume       = {abs/2606.21354},
-  first_online = {20260621354},
   year         = {2026},
   url          = {https://arxiv.org/abs/2606.21354},
   eprinttype    = {arXiv},
@@ -35,7 +33,6 @@
                   Sebastian Pokutta},
   title        = {Curvature-Dependent Lower Bounds for Frank-Wolfe},
   booktitle    = {Conference on Neural Information Processing Systems},
-  first_online = {20260510595},
   year         = {2026},
   eprinttype    = {arXiv},
   eprint       = {2605.10595},
@@ -54,7 +51,6 @@
   booktitle    = {International Conference on Machine Learning},
   series       = {Proceedings of Machine Learning Research},
   publisher    = {{PMLR}},
-  first_online = {20260204378},
   year         = {2026},
   eprinttype    = {arXiv},
   eprint       = {2602.04378},
@@ -62,6 +58,26 @@
   code         = {https://github.com/ZIB-IOL/FW-lower-bound-for-strongly-convex-sets},
   blog         = {https://www.pokutta.com/blog/fw-lower-bounds-sc/},
   abstract     = {We present a constructive lower bound of $\Omega(1/\sqrt{\varepsilon})$ for Frank-Wolfe (FW) when both the objective and the constraint set are smooth and strongly convex, showing that the known uniform $\mathcal{O}(1/\sqrt{\varepsilon})$ guarantees in this regime are tight. It is known that under additional assumptions on the position of the optimizer, FW can converge linearly. However, it remained unclear whether strong convexity of the set can yield rates uniformly faster than $\mathcal{O}(1/\sqrt{\varepsilon})$, i.e., irrespective of the position of the optimizer. To investigate this question, we focus on a simple yet representative problem class: minimizing a strongly convex quadratic over the Euclidean unit ball, with the optimizer on the boundary. We analyze the dynamics of FW for this problem in detail and develop a novel computational approach to construct worst-case FW trajectories, which is of independent interest. Guided by these constructions, we develop an analytical proof establishing the lower bound.},
+}
+
+@article{jovanovi2026mathtt,
+  author       = {Andrej Jovanović and
+                  Alex Iacob and
+                  Philipp Wiesner and
+                  Christophe Roux and
+                  Max Zimmer and
+                  Lorenzo Sani and
+                  Sebastian Pokutta and
+                  Nicholas D. Lane},
+  title        = {$\mathtt{DistP}$: Scaling Local-Update Training with Zero-Shot Hyperparameter Transfer},
+  journal      = {CoRR},
+  volume       = {abs/2611.27808},
+  year         = {2026},
+  url          = {https://arxiv.org/abs/2611.27808},
+  eprinttype    = {arXiv},
+  eprint       = {2611.27808},
+  arxiv        = {2611.27808},
+  abstract     = {Local-update methods offer a communication-efficient alternative to Distributed Data Parallelism ($\mathtt{DDP}$), but introduce additional hyperparameters that require costly tuning. For $\mathtt{DDP}$, zero-shot hyperparameter transfer reduces this cost by reusing settings tuned on smaller models, but its applicability to local-update training remains unclear. We propose $\mathtt{DistP}$, a theoretical framework extending existing transfer rules from $\mathtt{DDP}$ to local-update training with varying worker counts, local steps, and outer optimizers. With averaging as the outer optimizer, $\mathtt{DistP}$ supports learning-rate transfer across width and depth while improving model quality. The tuned inner learning rate also directly transfers across synchronization intervals, but follows two regimes when increasing the global batch size: square-root learning-rate scaling for larger local batches and a fixed reference rate for additional workers. We then generalize width and depth transfer to other outer optimizers, enabling stable scaling with $\mathtt{Adam}$. However, with momentum in the outer optimizer, changing batch size or local steps can require inner--outer learning-rate tuning, consistent with prior work. In language-modeling experiments at $823$M parameters, $\mathtt{DistP}$ reduces validation loss by $8.1\%$ and improves mean downstream accuracy by $10\%$ relative to baselines without retuning at the larger scale. Fitted scaling laws suggest that this advantage grows with the compute budget, reinforcing the benefits of $\mathtt{DistP}$ for communication-efficient training.},
 }
 
 @inproceedings{schiekiera2026associations,
@@ -74,7 +90,6 @@
   booktitle    = {International Conference on Machine Learning},
   series       = {Proceedings of Machine Learning Research},
   publisher    = {{PMLR}},
-  first_online = {20260200628},
   year         = {2026},
   eprinttype    = {arXiv},
   eprint       = {2602.00628},
@@ -93,7 +108,6 @@
   title        = {The Agentic Researcher: A Practical Guide to {AI}-Assisted Research in Mathematics and Machine Learning},
   journal      = {CoRR},
   volume       = {abs/2603.15914},
-  first_online = {20260315914},
   year         = {2026},
   url          = {https://arxiv.org/abs/2603.15914},
   eprinttype    = {arXiv},
@@ -113,7 +127,6 @@
   title        = {LinearPFN: Amortized Variable Selection for Linear Models with Interactions},
   journal      = {CoRR},
   volume       = {abs/2610.06580},
-  first_online = {20261006580},
   year         = {2026},
   url          = {https://arxiv.org/abs/2610.06580},
   eprinttype    = {arXiv},
@@ -131,7 +144,6 @@
   title        = {The KV-Surgeon: Compensation-Aware Offline KV-Cache Compaction},
   journal      = {CoRR},
   volume       = {abs/2610.25933},
-  first_online = {20261025933},
   year         = {2026},
   url          = {https://arxiv.org/abs/2610.25933},
   eprinttype    = {arXiv},
@@ -139,6 +151,7 @@
   arxiv        = {2610.25933},
   abstract     = {Offline compaction of the key--value cache (KV-cache) reduces the cost of repeatedly querying a fixed context by constructing a smaller cache once and reusing it subsequently. The central challenge of compaction is deciding which cache entries to delete and which to retain. Existing methods score each candidate for deletion on its own, with the rest of the cache being held fixed. However, softmax renormalization of the attention operation couples these decisions in a nonlinear manner: removing one entry changes the attention weights of every remaining one. In this work, we introduce KV-Surgeon, which uses calibration data to take interactions into account in a tractable way. We derive a quadratic surrogate that admits closed-form expressions for jointly making the optimal greedy removal decision as well as compensation within the remaining entries. On QuALITY, LongHealth, and Long Code Arena, and at every evaluated compaction ratio, KV-Surgeon substantially advances the cost--accuracy Pareto frontier of dense and mixture-of-experts models from 4B to 30B parameters. At $50\times$ compaction, KV-Surgeon improves question-answering accuracy by up to four points over attention matching (Zweiger et al., 2026), the state of the art, at comparable cost. Lastly, we introduce an even faster variant, which also exceeds the state of the art while requiring only two fifths of its cost.},
 }
+
 @inproceedings{martinez2025accelerated,
   author       = {David Martínez-Rubio and
                   Christophe Roux and
@@ -150,7 +163,6 @@
   volume       = {258},
   pages        = {280–288},
   publisher    = {{PMLR}},
-  first_online = {20230516186},
   year         = {2025},
   eprinttype    = {arXiv},
   eprint       = {2305.16186},
@@ -165,7 +177,6 @@
                   Sebastian Pokutta},
   title        = {On the Byzantine-Resilience of Distillation-Based Federated Learning},
   booktitle    = {International Conference on Learning Representations},
-  first_online = {20240212265},
   year         = {2025},
   eprinttype    = {arXiv},
   eprint       = {2402.12265},
@@ -186,7 +197,6 @@
   volume       = {267},
   pages        = {52139–52172},
   publisher    = {{PMLR}},
-  first_online = {20250118381},
   year         = {2025},
   eprinttype    = {arXiv},
   eprint       = {2501.18381},
@@ -203,7 +213,6 @@
   title        = {Don't Be Greedy, Just Relax! Pruning {LLMs} via Frank-Wolfe},
   journal      = {CoRR},
   volume       = {abs/2510.13713},
-  first_online = {20251013713},
   year         = {2025},
   url          = {https://arxiv.org/abs/2510.13713},
   eprinttype    = {arXiv},
@@ -222,7 +231,6 @@
   title        = {SparseSwaps: Tractable {LLM} Pruning Mask Refinement at Scale},
   journal      = {CoRR},
   volume       = {abs/2512.10922},
-  first_online = {20251210922},
   year         = {2025},
   url          = {https://arxiv.org/abs/2512.10922},
   eprinttype    = {arXiv},
@@ -237,7 +245,6 @@
                   Sebastian Pokutta},
   title        = {Convergence and Trade-Offs in Riemannian Gradient Descent and Riemannian Proximal Point},
   booktitle    = {International Conference on Machine Learning},
-  first_online = {20240310429},
   year         = {2024},
   url          = {https://proceedings.mlr.press/v235/marti-nez-rubio24a.html},
   eprinttype    = {arXiv},
@@ -256,7 +263,6 @@
   journal      = {Journal of Machine Learning Research},
   volume       = {22},
   pages        = {1–23},
-  first_online = {20210305907},
   year         = {2021},
   url          = {http://jmlr.org/papers/v22/21-0277.html},
   eprinttype    = {arXiv},
@@ -274,7 +280,6 @@
   title        = {Efficient Online-Bandit Strategies for Minimax Learning Problems},
   journal      = {CoRR},
   volume       = {abs/2105.13939},
-  first_online = {20210513939},
   year         = {2021},
   url          = {https://arxiv.org/abs/2105.13939},
   eprinttype    = {arXiv},

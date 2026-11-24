@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I joined Inria Paris as a postdoctoral researcher in the [SIERRA team](https://www.di.ens.fr/sierra/) supervised by [Alexandre d’Aspremont](https://www.di.ens.fr/~aspremon/).
+I joined the [SIERRA team](https://sierra-mlopt.github.io/) at Inria Paris as a postdoctoral researcher under the supervision of [Alexandre d’Aspremont](https://www.di.ens.fr/~aspremon/).

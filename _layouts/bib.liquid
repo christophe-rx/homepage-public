@@ -105,7 +105,8 @@
         {%- assign clean_last_name_compact = clean_last_name | replace: "'", "" | replace: "’", "" | replace: "‘", "" | replace: "ʼ", "" | replace: " ", "" | replace: "-", "" -%}
         {%- assign clean_last_name_no_prefix = clean_last_name | replace: "d'", "" -%}
         {%- assign author_first_norm = author.first | downcase | strip | remove_accents | replace: "’", "'" | replace: "‘", "'" -%}
-        {% assign coauthor_records = site.data.coauthors[clean_last_name] %}
+        {%- assign raw_last_name = author_last_name | downcase | strip -%}
+        {% assign coauthor_records = site.data.coauthors[clean_last_name] | default: site.data.coauthors[raw_last_name] %}
         {% if coauthor_records == nil and site.data.coauthors[clean_last_name_no_apostrophe] %}
           {% assign coauthor_records = site.data.coauthors[clean_last_name_no_apostrophe] %}
         {% endif %}

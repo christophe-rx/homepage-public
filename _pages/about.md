@@ -31,8 +31,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a postdoctoral researcher in the [SIERRA team](https://www.di.ens.fr/sierra/) at [Inria Paris](https://www.inria.fr/fr/centre-inria-de-paris) supervised by [Alexandre d’Aspremont](https://www.di.ens.fr/~aspremon/) and funded by [CNRS](https://www.cnrs.fr).
+I am a postdoctoral researcher in the [SIERRA team](https://sierra-mlopt.github.io/) at [Inria Paris](https://www.inria.fr/en/inria-paris-centre) supervised by [Alexandre d’Aspremont](https://www.di.ens.fr/~aspremon/) and funded by [CNRS](https://www.cnrs.fr).
 
-Previously, I was the research area lead for [iol.OML](https://iol.zib.de/research/iol-oml.html) (Optimization and Learning) at the [Zuse Institute Berlin (ZIB)](https://www.zib.de/). I defended my PhD at the [Institute of Mathematics, TU Berlin](https://www.math.tu-berlin.de/) in June 2026, under the supervision of [Sebastian Pokutta](https://www.pokutta.com/) and [David Martínez-Rubio](https://damaru2.github.io/). 
+Previously, I was the research area lead for [iol.OML](https://iol.zib.de/research/iol-oml.html) (Optimization and Learning) at the [Zuse Institute Berlin (ZIB)](https://www.zib.de/). I defended my PhD at the [Institute of Mathematics, TU Berlin](https://www.math.tu-berlin.de/) in June 2026 under the supervision of [Sebastian Pokutta](https://www.pokutta.com/) and [David Martínez-Rubio](https://damaru2.github.io/).
 
-My research focuses on algorithms and theory for large-scale continuous optimization, with an emphasis on first-order methods for problems in modern machine learning. Specifically, I have worked on first order methods on Riemannian manifolds, online optimization, min-max formulations, Frank-Wolfe, federated learning as well as applying optimization techniques for to improve the efficiency of LLMs. 
+My research focuses on algorithms and theory for large-scale continuous optimization, with an emphasis on first-order methods for problems in modern machine learning. I have worked on first-order methods on Riemannian manifolds, online optimization, min-max formulations, the Frank–Wolfe algorithm, and federated learning. I also use optimization techniques to improve the efficiency of large language models.

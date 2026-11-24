@@ -31,6 +31,14 @@ hendrych:
 - firstname:
   - Deborah
   url: https://iol.zib.de/team/deborah-hendrych.html
+iacob:
+- firstname:
+  - Alex
+  url: https://iacob-alexandru-andrei.github.io/
+jovanović:
+- firstname:
+  - Andrej
+  url: https://andrej.jovanovic.co.za/
 kerdreux:
 - firstname:
   - Thomas
@@ -40,6 +48,10 @@ krüger:
 kutyniok:
 - firstname:
   - Gitta
+lane:
+- firstname:
+  - Nicholas D.
+  url: https://www.cst.cam.ac.uk/people/ndl32
 martínez-rubio:
 - firstname:
   - David
@@ -56,6 +68,10 @@ roux:
 - firstname:
   - Christophe
   url: https://christopheroux.de
+sani:
+- firstname:
+  - Lorenzo
+  url: https://relogu.github.io/
 schiekiera:
 - firstname:
   - Louis
@@ -74,6 +90,10 @@ wagner:
 - firstname:
   - Moritz
   url: https://iol.zib.de/team/moritz-wagner.html
+wiesner:
+- firstname:
+  - Philipp
+  url: https://philippwiesner.org/
 wirth:
 - firstname:
   - Elias Samuel
